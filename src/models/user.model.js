@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema({
         type: String,
     },
     watchHistory: [{
-        type: Schema.type.ObjectId,
+        type: Schema.Types.ObjectId,
         ref : "Video"
     }],
     password:{
@@ -66,8 +66,8 @@ userSchema.methods.generateAccessToken = function(){
     jsonwebtoken.sign({
         _id: this._id,
         email : this.email,
-        userName = this.userName,
-        fullName = this.fullName
+        userName : this.userName,
+        fullName : this.fullName
 
     }, process.env.ACCESS_TOKEN_SECRET , {
         expiresIn: process.env.ACCESS_TOKEN_EXPIRY
