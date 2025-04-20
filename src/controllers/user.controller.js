@@ -42,6 +42,7 @@ const existingUser = await User.findOne({
    const localPathAvatar = req.files?.avatar[0]?.path
   // const localPathCoverImage = req.files?.coverImage[0]?.path
   let localPathCoverImage ;
+  
   if(req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0)
   {
     localPathCoverImage = req.files?.coverImage[0]?.path
